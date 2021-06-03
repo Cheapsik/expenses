@@ -9,7 +9,7 @@
   height: 100%;
   width: 100%;
   border-radius: 12px;
-  background-color: lightgreen;
+  background-color: #4B3EBE;
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -17,9 +17,9 @@
 }
 
 .chart-bar__fill {
-  background-color: #06470c;
+  background-color: yellow;
   width: 100%;
-  
+
   transition: all .2s ease-out;
 }
 
