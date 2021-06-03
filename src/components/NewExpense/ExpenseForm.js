@@ -2,9 +2,16 @@ import React, { useState } from "react";
 import "./ExpenseForm.css";
 
 const ExpenseForm = (props) => {
+  let today = new Date();
+  const dd = String(today.getDate()).padStart(2, "0");
+  const mm = String(today.getMonth() + 1).padStart(2, "0"); //January is 0!
+  const yyyy = today.getFullYear();
+
+  today = yyyy + "-" + mm + "-" + dd;
+
   const [enteredTitle, setEnteredTitle] = useState("");
   const [enteredAmount, setEnteredAmount] = useState("");
-  const [enteredDate, setEnteredDate] = useState("");
+  const [enteredDate, setEnteredDate] = useState(today);
 
   const titleChangeHandler = (e) => {
     setEnteredTitle(e.target.value);
@@ -26,7 +33,6 @@ const ExpenseForm = (props) => {
     };
     props.onSaveExpenseData(expenseData);
     setEnteredTitle("");
-    setEnteredDate("");
     setEnteredAmount("");
   };
 
